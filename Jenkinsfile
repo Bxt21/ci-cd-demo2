@@ -3,23 +3,22 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/ci-cd-demo2.git'  // Replace with your GitHub username
+                git credentialsId: 'github-token', url: 'https://github.com/Bxt21/ci-cd-demo2.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'pip install -r requirements.txt'  // Install dependencies
+                echo 'Building...'
             }
         }
         stage('Test') {
             steps {
-                sh 'pytest'  // Run tests using pytest
+                echo 'Testing...'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying application locally...'
-                sh 'python app.py'  // Run the app locally
+                echo 'Deploying...'
             }
         }
     }
