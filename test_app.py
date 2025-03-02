@@ -3,7 +3,7 @@ from app import get_greeting
 
 class TestApp(unittest.TestCase):
     def text_get_greeting(self):
-        self.assertEqual(get_greeting(), "Hello, World!")
+        self.assertEqual(get_greeting(), "Hello, Worlds!")
 
 
 if __name__ == '__main__':
